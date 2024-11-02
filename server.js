@@ -58,7 +58,7 @@ app.get('/users', async (request, response) => {
   response.send(users);
 })
 app.get('/users/:id', async (request, response) => {
-  let user = await User.findById(request.params.id).populate("tasks").exec();
+  let user = await User.findById(request.params.id).populate("tasks");
   response.send(user);
 })
 app.put('/users/:id', async (request, response) => {
